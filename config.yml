@@ -3,3 +3,7 @@ title: D' Hosting Site
 
 # Your name to show in the footer
 author: Chidubem
+
+theme: jekyll-theme-minimal
+title: D' Hosting Site
+description: To change the title and link displayed
