@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+:root{
+    --primary-color:#047aed;
+    --secondary-color:#1c3fa8;
+    --dark-color: #002240;
+    --light-color: #f4f4f4;
+    --success-color: #5cb85c;
+    --error-color: #d9534f;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'lato', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: #333;
+}
+h1,h2{
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+p{
+    margin: 10px 0;
+}
+
+img{
+    width: 100%;
+}
+code,pre{
+    background: #333;
+    color: #fff;
+    padding: 10px;
+}
+/* Nav bar Styling */
+.navbar{
+    background-color:var(--primary-color) ;
+    color: white;
+    height: 70px;
+}
+.navbar ul{
+    display: flex;
+}
+.navbar a{
+    color: #fff;
+    padding: 10px;
+    margin: 0 5px;
+    position: relative;
+}
+
+.navbar a::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 100; /* Start from the left*/
+    width: 0;
+    height: 3px;
+    background: #fff;
+    transition: width 0.5s ease,right 0.5s ease; /* Add right property to the transition */
+}
+.navbar a:hover::before{
+    width: 80%;
+    left: 10;/* Reset right property to 0 when hovered */
+}
+
+.navbar .flex{
+    justify-content: space-between;
+}
+/* This class flex above will work if the flex is the nav bar and plus another reason for this;
+is because i what to give other classes flex as second name so the design of the flex below will be use and this one above will only work if the flex is in the navbar section */
+
+/* Showcase */
+.showcase{
+    height:400px;
+    background-color:var(--primary-color);
+    color: #fff;
+    position: relative;
+}
+
+.showcase h1{
+    font-size: 40px;
+}
+
+.showcase p{
+    margin: 20px 0;
+}
+
+.showcase .grid{
+    grid-template-columns:  55% 42%;
+    gap: 30px;
+    overflow: visible;
+}
+.showcase-form{
+    position: relative;
+    top: 60px;
+    height: 350px;
+    width: 400px;
+    padding: 40px;
+    z-index: 100;
+    animation: slideInFromRight 1s ease-in;
+    /* This z-index is to make sure the form is always in front */
+}
+.showcase-text{
+    animation: slideInFromLeft 1s ease-in;
+}
+
+.showcase-form .form-control{
+    margin: 30px 0;
+}
+.showcase-form input[type = 'text'],
+.showcase-form input[type = 'email']{
+    border: 0;
+    border-bottom: 1px solid #b4becb;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.showcase-form input:focus{
+    outline: none;
+}
+
+/* Stats */
+.stats {
+    padding-top: 100px;
+    animation: slideInFromBottom 1s ease-in;
+}
+
+.stats-heading {
+    max-width: 500px;
+    margin: auto !important;
+}
+.stats .grid h3{
+    font-size: 35px;
+}
+.stats .grid p{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Cli */
+
+.cli .grid{
+    grid-template-columns:  repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr) ;
+}
+
+.cli .grid > *:first-child{
+    /* THis is above is specifying that the first
+    child of the grid inside cli */
+    grid-column: 1/span 2;
+    grid-row: 1/span 2;
+}
+
+.cli .grid .card{
+    padding: 20px 30px;
+}
+
+/* CLoud */
+.cloud .grid {
+    grid-template-columns: 4fr 3fr;
+}
+
+/* Languages */
+.languages .flex{
+    flex-wrap: wrap;
+    /* this will make the language and loge
+    wrap to be in line according to the screen size */
+}
+
+.languages .card{
+    text-align: center;
+    margin: 18px 10px 40px;
+    transition: transform 0.2s ease-in;
+    /* this set the speed of the transform below */
+}
+
+.languages .card h4{
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.languages .card:hover{
+    transform:translateY(-15px) ;
+    /* this make it go up when u hover */
+}
+
+/* Featurs */
+.features-head img,.docs-head img {
+    width: 250px;
+    justify-self: flex-end;
+}
+
+.feature-sub-head img{
+    width: 400px;
+    justify-self: flex-end;
+}
+
+.features-main .card > i{
+    margin-right: 20px;
+}
+
+.features-main .grid{
+    padding: 30px;
+}
+
+.features-main .grid > *:first-child{
+    grid-column: 1 / span 3;
+}
+.features-main .grid > *:nth-child(2){
+    grid-column: 1 / span 2;
+}
+.feature-sub-head h1,
+.feature-sub-head p{
+    color: #333 !important;
+}
+
+/* Doc */
+.docs-main nav ul li a{
+    color: #333 !important;
+}
+
+.docs-main .grid{
+    margin: 20px 0;
+}
+
+.docs-main .grid{
+    grid-template-columns: 1fr 2fr;
+    align-items: flex-start;
+}
+.docs-main h3{
+    color: #333 !important;
+    margin-top: 10px;
+
+}
+
+.docs-main nav li {
+    font-size: 17px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px #ccc solid;
+}
+
+.docs-main a:hover{
+    font-weight: bold;
+}
+
+/* Footer */
+.footer .social a{
+    margin: 0 10px;
+}
+.footer ul{
+    display: flex;
+    gap: 12px;
+    font-weight: bold;
+}
+
+.footer ul a:hover,.social a:hover{
+    color: var(--primary-color);
+}
+
+/* Animations */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+    
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+    
+}
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+    
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+    
+}
+
+/* Responsiveness */
+
+/* Tablet and Under */
+@media(max-width:768px){
+    .grid,
+    .showcase .grid,
+    .stats .grid,
+    .cli .grid,
+    .cloud .grid,
+    .features-head .grid,
+    .feature-sub-head .grid,
+    .features-main .grid,
+    .docs-head .grid,
+    .docs-main .grid
+     {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .showcase{
+        height: auto;
+    }
+
+    .showcase-text{
+        text-align: center;
+        margin-top: 40px;
+        animation: slideInFromTop 1s ease-in;
+    }
+
+    .showcase-form{
+        justify-self: center;
+        /* this justify-self :this you put on an actual flex or grid item to justify just that item */
+        margin: auto;
+        animation: slideInFromBottom 1s ease-in;
+    }
+
+    .cli .grid > *:first-child{
+        /* THis is above is specifying that the first
+        child of the grid inside cli */
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .footer .social a{
+        margin: 0 5px;
+    }
+
+    .features-head,
+    .feature-sub-head,
+    .docs-head{
+        text-align: center;
+    }
+
+    .features-head img,
+    .feature-sub-head img,
+    .docs-head img{
+        justify-self: center;
+    }
+    .feature-sub-head img{
+        width: 100%;
+    }
+
+    .features-main .grid > *:first-child,
+    .features-main .grid > *:nth-child(2){
+        grid-column: 1;
+    }
+
+}
+/* Mobile */
+@media (max-width:500px) {
+    .navbar{
+        height: 110px;
+    }
+    
+    .navbar .flex{
+        flex-direction: column;
+    }
+
+    .navbar ul{
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .footer ul{
+        flex-direction: column;
+    }
+    .footer .social a{
+        margin: 0 10px;
+    }
+}
