@@ -1,2 +1,2 @@
-# Developed this in my journey of learning responsiveness. Using CSS Media Query 
+## Developed this in my journey of learning responsiveness. Using CSS Media Query 
 [View Site](https://Chidubem3.github.io/DHosting-Site/)
